@@ -1,0 +1,15 @@
+services:
+  twitter-postgres:
+    image: postgres:17
+    container_name: twitter_db
+    environment:
+      POSTGRES_DB: twitter-clone
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres123
+    ports:
+      - "5432:5432"
+    volumes:
+      - twitter_pg_data:/var/lib/postgresql/data
+
+volumes:
+  twitter_pg_data:
